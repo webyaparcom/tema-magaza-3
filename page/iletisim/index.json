@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Yol tarifi",
+    "en": "Directions",
+    "ar": "الاتجاهات"
+  },
+  "status": "play",
+  "category": "h5rx404qny",
+  "id": "iletisim",
+  "url": "",
+  "path": "iletisim",
+  "index": 4,
+  "icon": "directions",
+  "desing": {
+    "header": [],
+    "body": [
+      "k8mp01",
+      "537t66"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Harita ve merkez şubeye yol tarifi.",
+    "en": "Map and directions to the main branch.",
+    "ar": "الخريطة والاتجاهات إلى الفرع الرئيسي."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Yol tarifi",
+    "en": "Directions",
+    "ar": "الاتجاهات"
+  },
+  "keyword": {
+    "tr": "iletişim",
+    "en": "contact",
+    "ar": "اتصال"
+  },
+  "text": {},
+  "update": "2026-11-16T20:30:58.238Z",
+  "date": "2026-10-30"
+}

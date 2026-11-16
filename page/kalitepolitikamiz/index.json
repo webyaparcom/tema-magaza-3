@@ -1,0 +1,46 @@
+{
+  "id": "kalitepolitikamiz",
+  "name": {
+    "tr": "Kalite Politikamız",
+    "en": "Quality Policy",
+    "ar": "سياسة الجودة"
+  },
+  "description": {
+    "tr": "Kalite politikamız",
+    "en": "Our quality policy",
+    "ar": "سياسة الجودة لدينا"
+  },
+  "keyword": {
+    "tr": "Kalite Politikamız",
+    "en": "quality policy, quality, continuous improvement",
+    "ar": "سياسة الجودة, الجودة, التحسين المستمر"
+  },
+  "path": "kalitepolitikamiz",
+  "icon": "verified",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {
+    "tr": "<h2>Kalite Politikamız</h2>\n<p>Şubeler arası aynı gün transfer, kurulum masasında ücretsiz ilk kurulum, 14 gün değişim (kurgusal koşul).</p>",
+    "en": "<h2>Our quality policy</h2>\n<p>Same-day transfers between branches, a free first setup at the setup desk and a 14-day exchange (fictional terms).</p>",
+    "ar": "<h2>سياسة الجودة لدينا</h2>\n<p>نقل بين الفروع في اليوم نفسه، وإعداد أول مجاني في مكتب الإعداد، واستبدال خلال 14 يومًا (شروط افتراضية).</p>"
+  },
+  "title": {
+    "tr": "Kalite Politikamız",
+    "en": "Quality Policy",
+    "ar": "سياسة الجودة"
+  },
+  "date": "2026-11-16T20:26:09.405Z",
+  "update": "2026-11-16T20:30:58.249Z",
+  "sablonIzi": "acedf6b7c400faec",
+  "sablonIziDil": {
+    "en": "587042c99dce90ca",
+    "ar": "a5348f544603b25e"
+  }
+}

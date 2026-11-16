@@ -1,0 +1,41 @@
+{
+  "id": "h5rx404qny",
+  "name": {
+    "tr": "Şubeler",
+    "en": "Branches",
+    "ar": "الفروع"
+  },
+  "description": {
+    "tr": "Üç şubenin adresi, saatleri, yol tarifi ve ekibi.",
+    "en": "Addresses, hours, directions and team for all three branches.",
+    "ar": "عناوين الفروع الثلاثة وساعاتها واتجاهاتها وفريقها."
+  },
+  "keyword": {
+    "tr": "şube, yol tarifi, Gaziantep",
+    "en": "branch, directions, Gaziantep",
+    "ar": "فرع، اتجاهات، غازي عنتاب"
+  },
+  "path": "teklif-al",
+  "icon": "location_on",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "537t66",
+      "k8mp01",
+      "3hb158"
+    ],
+    "footer": []
+  },
+  "index": 3,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Şubeler",
+    "en": "Branches",
+    "ar": "الفروع"
+  },
+  "date": "2026-11-16T20:26:09.634Z",
+  "update": "2026-11-16T20:30:58.233Z"
+}
