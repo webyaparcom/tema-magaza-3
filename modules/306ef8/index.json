@@ -1,0 +1,63 @@
+{
+  "name": "Alt Plan Kat — kalın dış duvarlı kat planında kapı yaylı odalar + antet",
+  "description": "Üstte iki ucu çentikli ölçü çizgisi ortasında site adı; altında kalın dış duvarlı bir kat planı: oda oda bilgi grupları (taramalı geniş salon: logo, tanıtım, düğme, sosyal · sayfalar · bağlantılar · geniş iletişim · saatler), her odanın köşesinde numara etiketi ve duvarında kapı boşluğu + kesik çizgili kapı yayı. Planın altında mimari antet kutusu: telif, yasal, dil, başa dön. Footer bir mimari çizim: odalar paylaşılan tek duvarlarla birbirine dayanır (iç duvar yalnız bitiş kenarlarında, dış çerçeve taşanı kırpar), satırlar flex ile dolar — saat ya da bağlantı yoksa boş oda kalmaz; hover odanın zeminini boyar, kapı yayı vurgu rengine döner. Sayfalar site sayfalarından, iletişim desing → site ayarı, sosyal wmSocialBar, dil seçici {{langbar}}. Metinler dil sözlüğü / lang.json; renkler desing + var(--mx-site-*); mantıksal CSS → RTL.",
+  "version": "1.0.0",
+  "icon": "floor",
+  "category": "footer",
+  "subCategory": "floor-plan",
+  "tags": [
+    "footer",
+    "floor-plan",
+    "architecture",
+    "rooms",
+    "title-block",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(48px, 6vw, 80px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "hakkinda": "",
+    "tel": "",
+    "eposta": "",
+    "adres": "",
+    "cta_ad": "",
+    "cta_url": "",
+    "rightsText": "",
+    "bg": "var(--mx-site-bg, #ffffff)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 68%, var(--mx-site-bg, #ffffff))",
+    "kartBg": "var(--mx-site-surface, #f6f7f9)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "logoH": "48px",
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing",
+    "alanlar": {
+      "hakkinda": "kısa tanıtım (dil sözlüğü; yoksa setting.description)",
+      "tel": "telefon (yoksa setting.phone)",
+      "eposta": "e-posta (yoksa setting.email)",
+      "adres": "adres (dil sözlüğü; yoksa setting.address)",
+      "services": "bağlantı listesi [{ name, href }] (footer-10)",
+      "hours": "çalışma saatleri [{ days, time }]",
+      "legal": "yasal bağlantılar [{ text, href }]",
+      "social": "sosyal hesaplar [{ ad, url }] (yoksa site ayarı)",
+      "rightsText": "telif satırı (yoksa @all-rights@)",
+      "nlTitle": "bülten başlığı (bülten formu yalnız başlık/metin + alıcı e-posta varken)"
+    }
+  }
+}

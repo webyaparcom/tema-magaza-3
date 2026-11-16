@@ -1,0 +1,47 @@
+{
+  "name": {
+    "tr": "Kurumsal",
+    "en": "About",
+    "ar": "عنّا"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 1,
+  "icon": "info",
+  "desing": {
+    "header": [],
+    "body": [
+      "emgm3s",
+      "mtr4on"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Bir kavşaktan üç şubeye Kavşak’ın hikâyesi ve rakamları.",
+    "en": "The Kavsak story and figures, from one crossroads to three branches.",
+    "ar": "قصة كافشاك وأرقامها من تقاطع واحد إلى ثلاثة فروع."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Kurumsal",
+    "en": "About",
+    "ar": "عنّا"
+  },
+  "keyword": {
+    "tr": "hakkımızda, hikâye",
+    "en": "about, story",
+    "ar": "عنّا، قصة"
+  },
+  "text": {},
+  "update": "2026-11-16T20:30:58.222Z",
+  "date": "2026-10-30"
+}

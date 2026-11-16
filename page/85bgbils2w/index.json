@@ -1,0 +1,39 @@
+{
+  "id": "85bgbils2w",
+  "name": {
+    "tr": "Ekip",
+    "en": "Team",
+    "ar": "الفريق"
+  },
+  "description": {
+    "tr": "Şube ve reyona göre aranabilir ekip (kurgusal).",
+    "en": "A team you can search by branch and department (fictional).",
+    "ar": "فريق يمكن البحث فيه حسب الفرع والقسم (افتراضي)."
+  },
+  "keyword": {
+    "tr": "ekip, şube",
+    "en": "team, branch",
+    "ar": "فريق، فرع"
+  },
+  "path": "ekip",
+  "icon": "groups",
+  "category": "hakkimizda",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "3hb158"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Ekip",
+    "en": "Team",
+    "ar": "الفريق"
+  },
+  "date": "2026-11-16T20:26:09.625Z",
+  "update": "2026-11-16T20:30:58.227Z"
+}

@@ -1,0 +1,57 @@
+{
+  "name": "İletişim Yönerge — metro hattı gibi kanal durakları + adres son durağı ve yol tarifi",
+  "description": "Kanallar bir toplu taşıma hattının durakları: akan kesikli hat üstünde halka ikonlu duraklar (telefon · WhatsApp · e-posta · saat), hattın sonunda marka renginde «son durak» kartı — zıplayan iğne, adres ve iki düğme: yol tarifi al (Google Maps yön tarifi, adres hedef) + haritada aç. Mobilde hat dikeyleşir. iletisim-zaman-cizgisi kanalları sakin bir dikey düğüm hattında sıralar; bu modül YÖN TARİFİ odaklı: hareketli (background-position) yatay metro hattı, adres ayrı son durak kartı ve maps/dir hedef bağlantısı; ailede güzergâh kurgusu olan tek modül. Kanallar desing'den (adres · telefon · WhatsApp · e-posta · saat) + data satırları; etiketler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Kanal yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "directions",
+  "category": "contact",
+  "subCategory": "route-line",
+  "tags": [
+    "contact",
+    "directions",
+    "route",
+    "map",
+    "line",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "adres": "",
+    "telefon": "",
+    "eposta": "",
+    "whatsapp": "",
+    "saat": "",
+    "haritaUrl": "",
+    "haritaGomme": "",
+    "waMesaj": "",
+    "bg": "var(--mx-site-bg, #ffffff)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 68%, var(--mx-site-bg, #ffffff))",
+    "kartBg": "var(--mx-site-surface, #f6f7f9)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing",
+    "alanlar": {
+      "ikon": "Material Symbols adı (kanal türü ikondan da anlaşılır: mail · call · location_on · schedule)",
+      "deger": "dil sözlüğü (görünen değer, zorunlu; eski `text`)",
+      "url": "bağlantı (boşsa e-posta/telefon/haritadan türetilir)",
+      "baslik": "dil sözlüğü (kanal etiketi)"
+    }
+  }
+}

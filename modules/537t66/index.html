@@ -1,0 +1,106 @@
+<section class="modulex-iletisim-yonerge{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-iletisim-yonerge-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* iletisim-yonerge — iletisim-zaman-cizgisi kanalları sakin bir dikey düğüm hattında sıralar; bu modül YÖN TARİFİ odaklı: hareketli (background-position) yatay metro hattı, adres ayrı son durak kartı ve maps/dir hedef bağlantısı; ailede güzergâh kurgusu olan tek modül. */
+  .modulex-iletisim-yonerge { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-iletisim-yonerge *, .modulex-iletisim-yonerge *::before, .modulex-iletisim-yonerge *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-iletisim-yonerge :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-iletisim-yonerge :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-iletisim-yonerge :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-iletisim-yonerge :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-iletisim-yonerge img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-iletisim-yonerge) img { height: auto; }
+  .modulex-iletisim-yonerge [hidden] { display: none !important; }
+  .modulex-iletisim-yonerge :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-iletisim-yonerge :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-iletisim-yonerge-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-iletisim-yonerge-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-iletisim-yonerge--bassiz .modulex-iletisim-yonerge-bas { display: none; }
+  .modulex-iletisim-yonerge-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-iletisim-yonerge-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-iletisim-yonerge-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-iletisim-yonerge-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-iletisim-yonerge-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-iletisim-yonerge-dugme:hover { transform: translateY(-2px); }
+  .modulex-iletisim-yonerge-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-iletisim-yonerge-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-iletisim-yonerge-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-iletisim-yonerge-bas2 { display: grid; gap: 12px; max-inline-size: 760px; }
+  .modulex-iletisim-yonerge-guzergah { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr); align-items: start; gap: 40px; margin-block-start: clamp(28px, 4vw, 48px); }
+  .modulex-iletisim-yonerge-guzergah--tek { grid-template-columns: minmax(0, 1fr); }
+  .modulex-iletisim-yonerge-hat { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 16px; }
+  .modulex-iletisim-yonerge-hat::before { content: ""; position: absolute; inset-block-start: 26px; inset-inline: 0 -40px; block-size: 6px; border-radius: 3px; background-image: repeating-linear-gradient(90deg, --accent-- 0 18px, color-mix(in srgb, --accent-- 30%, transparent) 18px 28px); background-size: 56px 100%; animation: modulex-iletisim-yonerge-akis 1.6s linear infinite; }
+  .modulex-iletisim-yonerge-hat--uc::before { inset-inline: 0; }
+  [dir="rtl"] .modulex-iletisim-yonerge-hat::before, :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-yonerge-hat::before { animation-direction: reverse; }
+  @keyframes modulex-iletisim-yonerge-akis { to { background-position: 56px 0; } }
+  .modulex-iletisim-yonerge-durak { position: relative; display: grid; justify-items: start; align-content: start; gap: 8px; min-width: 0; }
+  .modulex-iletisim-yonerge-dnokta { position: relative; z-index: 1; display: inline-grid; place-items: center; inline-size: 58px; block-size: 58px; border: 5px solid --accent--; border-radius: 50%; background: --bg--; color: --accentInk--; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-iletisim-yonerge-durak:hover .modulex-iletisim-yonerge-dnokta { transform: scale(1.1); background: --accent--; color: --accentText--; }
+  .modulex-iletisim-yonerge-dnokta .material-symbols-outlined { font-size: 24px; }
+  .modulex-iletisim-yonerge-dgovde { display: grid; gap: 2px; min-width: 0; }
+  .modulex-iletisim-yonerge-varis { position: relative; z-index: 1; display: grid; gap: 10px; padding: clamp(20px, 3vw, 32px); border-radius: --yuvarlak--; background: --vurguBg--; color: --vurguText--; box-shadow: 0 30px 60px -36px color-mix(in srgb, --text-- 60%, transparent); }
+  .modulex-iletisim-yonerge-vpin { display: inline-grid; place-items: center; inline-size: 56px; block-size: 56px; border-radius: 50% 50% 50% 0; background: --vurguText--; color: --vurguBg--; transform: rotate(-45deg); animation: modulex-iletisim-yonerge-vzipla 2.4s ease-in-out infinite; }
+  .modulex-iletisim-yonerge-vpin .material-symbols-outlined { font-size: 28px; transform: rotate(45deg); }
+  @keyframes modulex-iletisim-yonerge-vzipla { 0%, 100% { transform: rotate(-45deg) translate(0, 0); } 50% { transform: rotate(-45deg) translate(4px, -4px); } }
+  .modulex-iletisim-yonerge-vetk { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-iletisim-yonerge-vadres { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.2rem, 2vw, 1.6rem); font-weight: 750; line-height: 1.3; overflow-wrap: anywhere; }
+  .modulex-iletisim-yonerge-vdg { display: flex; flex-wrap: wrap; gap: 10px; margin-block-start: 6px; }
+  .modulex-iletisim-yonerge-varis .modulex-iletisim-yonerge-dugme { border-color: --vurguText--; background: --vurguText--; color: --vurguBg--; }
+  .modulex-iletisim-yonerge-vharita { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding-inline: 18px; border: 2px solid color-mix(in srgb, --vurguText-- 55%, transparent); border-radius: 999px; color: inherit; font-weight: 700; text-decoration: none; transition: border-color 0.2s ease; }
+  .modulex-iletisim-yonerge-vharita:hover { border-color: --vurguText--; }
+  @media (max-width: 1024px) {
+    .modulex-iletisim-yonerge-guzergah { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .modulex-iletisim-yonerge-hat::before { inset-inline: 0; }
+  }
+  @media (max-width: 768px) {
+    .modulex-iletisim-yonerge-hat { grid-auto-flow: row; gap: 20px; }
+    .modulex-iletisim-yonerge-hat::before { inset-block: 0; inset-inline: 26px auto; inline-size: 6px; block-size: auto; background-image: repeating-linear-gradient(180deg, --accent-- 0 18px, color-mix(in srgb, --accent-- 30%, transparent) 18px 28px); background-size: 100% 56px; animation-name: modulex-iletisim-yonerge-akis2; }
+    @keyframes modulex-iletisim-yonerge-akis2 { to { background-position: 0 56px; } }
+    .modulex-iletisim-yonerge-durak { grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 14px; }
+    .modulex-iletisim-yonerge-vdg > * { flex: 1 1 100%; justify-content: center; }
+  }
+  .modulex-iletisim-yonerge-kikon { flex: none; display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: color-mix(in srgb, --accent-- 14%, transparent); color: --accentInk--; font-size: 24px; }
+  .modulex-iletisim-yonerge-ketiket { display: block; color: --muted--; font-size: 0.82rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; }
+  .modulex-iletisim-yonerge-deger { color: inherit; font-weight: 650; text-decoration: none; overflow-wrap: anywhere; transition: color 0.2s ease; }
+  a.modulex-iletisim-yonerge-deger:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-iletisim-yonerge-eylem { display: inline-flex; align-items: center; gap: 6px; color: --accentInk--; font-weight: 700; text-decoration: none; transition: gap 0.2s ease; }
+  .modulex-iletisim-yonerge-eylem:hover { gap: 10px; }
+  .modulex-iletisim-yonerge-eylem .material-symbols-outlined { font-size: 18px; }
+  .modulex-iletisim-yonerge-kopya { display: none; align-items: center; gap: 6px; min-height: 36px; padding: 6px 12px; border: 1px solid --cizgi--; border-radius: 999px; background: transparent; color: --text--; font: inherit; font-size: 0.85rem; font-weight: 650; transition: border-color 0.2s ease, background 0.2s ease; }
+  .modulex-iletisim-yonerge--kjs .modulex-iletisim-yonerge-kopya { display: inline-flex; }
+  .modulex-iletisim-yonerge-kopya:hover { border-color: --accent--; }
+  .modulex-iletisim-yonerge-kopya .material-symbols-outlined { font-size: 18px; }
+  .modulex-iletisim-yonerge--kopyalandi { background: color-mix(in srgb, --accent-- 14%, transparent); }
+  .modulex-iletisim-yonerge-sosyal { display: grid; gap: 10px; }
+  .modulex-iletisim-yonerge-sbaslik { color: --muted--; font-size: 0.9rem; font-weight: 650; }
+  .modulex-iletisim-yonerge-sliste { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-iletisim-yonerge-cip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 8px 14px; border: 1px solid --cizgi--; border-radius: 999px; color: inherit; font-weight: 650; text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease; }
+  .modulex-iletisim-yonerge-cip:hover { border-color: --accent--; transform: translateY(-2px); }
+  .modulex-iletisim-yonerge-cikon { font-size: 18px; }
+  .modulex-iletisim-yonerge-harita { position: relative; overflow: hidden; min-height: 280px; border-radius: --yuvarlak--; background: --kartBg--; }
+  .modulex-iletisim-yonerge-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .modulex-iletisim-yonerge-hdesen { position: absolute; inset: 0; display: grid; place-items: center; background-color: color-mix(in srgb, --accent-- 8%, --kartBg--); background-image: linear-gradient(color-mix(in srgb, --text-- 7%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, --text-- 7%, transparent) 1px, transparent 1px), radial-gradient(circle at 30% 40%, color-mix(in srgb, --accent-- 18%, transparent) 0 18%, transparent 19%); background-size: 36px 36px, 36px 36px, 100% 100%; }
+  .modulex-iletisim-yonerge-pin { color: --accentInk--; font-size: 56px; animation: modulex-iletisim-yonerge-zipla 2.4s ease-in-out infinite; }
+  @keyframes modulex-iletisim-yonerge-zipla { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .modulex-iletisim-yonerge-hyol { position: absolute; inset-block-end: 16px; inset-inline-start: 16px; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border-radius: 999px; background: --bg--; color: --text--; font-weight: 700; text-decoration: none; box-shadow: 0 6px 20px color-mix(in srgb, --text-- 16%, transparent); transition: transform 0.2s ease; }
+  .modulex-iletisim-yonerge-hyol:hover { transform: translateY(-2px); }
+  .modulex-iletisim-yonerge-hyol .material-symbols-outlined { font-size: 18px; color: --accentInk--; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-yonerge :is(.modulex-iletisim-yonerge-baslik, .modulex-iletisim-yonerge-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-iletisim-yonerge-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-iletisim-yonerge { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-iletisim-yonerge *, .modulex-iletisim-yonerge *::before, .modulex-iletisim-yonerge *::after { animation: none !important; transition: none !important; }
+  }
+</style>

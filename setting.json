@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Kavşak Teknoloji: Gaziantep’te üç şubeli teknoloji mağazası; dizüstü, ses, giyilebilir ve aksesuar. Size en yakın şubeyi bulun, yol tarifi alın, stok sorun. Demo site; içerik kurgusaldır.",
+    "en": "Kavsak Teknoloji: an electronics store with three branches in Gaziantep: laptops, audio, wearables and accessories. Find the nearest branch, get directions, ask about stock. Demo site; content is fictional.",
+    "ar": "كافشاك تكنولوجي: متجر إلكترونيات بثلاثة فروع في غازي عنتاب؛ حواسيب محمولة وصوتيات وأجهزة قابلة للارتداء وإكسسوارات. اعثر على أقرب فرع واحصل على الاتجاهات واسأل عن المخزون. موقع تجريبي؛ المحتوى افتراضي."
+  },
+  "keyword": {
+    "tr": "teknoloji mağazası, şube, yol tarifi, dizüstü, kulaklık, Gaziantep",
+    "en": "electronics store, branch, directions, laptop, headphones, Gaziantep",
+    "ar": "متجر إلكترونيات، فرع، اتجاهات، حاسوب محمول، سماعات، غازي عنتاب"
+  },
+  "category": "Kurumsal",
+  "name": "Kavşak Teknoloji",
+  "domain": "magaza-3.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "source-sans-3",
+    "heading": "montserrat",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#C2410C",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "5px",
+    "--mx-radius-md": "8px",
+    "--mx-radius-lg": "11px",
+    "--mx-radius-xl": "15px"
+  },
+  "icon": "icon.png"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "fk1n7he8ih",
+  "name": {
+    "tr": "Reyonlar",
+    "en": "Departments",
+    "ar": "الأقسام"
+  },
+  "description": {
+    "tr": "Şubelerden hikâyeler ve raflardaki markalar (kurgusal).",
+    "en": "Stories from the branches and the brands on our shelves (fictional).",
+    "ar": "قصص من الفروع والعلامات على رفوفنا (افتراضية)."
+  },
+  "keyword": {
+    "tr": "reyon, marka",
+    "en": "department, brand",
+    "ar": "قسم، علامة"
+  },
+  "path": "hizmetler",
+  "icon": "storefront",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "yk58o2",
+      "tiymc9"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Reyonlar",
+    "en": "Departments",
+    "ar": "الأقسام"
+  },
+  "date": "2026-11-16T20:26:09.607Z",
+  "update": "2026-11-16T20:30:58.216Z"
+}

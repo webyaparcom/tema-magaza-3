@@ -1,0 +1,203 @@
+<header class="modulex-ust-akordeon-mobil{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-ust-akordeon-mobil-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</header>
+
+<style>
+  /* ust-akordeon-mobil — Alt sayfalar mobilde de saklanmaz ama kalabalık etmez: girintili sabit liste yerine tek açık bölümlü akordeon (artı/eksi), masaüstünde yükseklikle açılan kutu. */
+  .modulex-ust-akordeon-mobil { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-ust-akordeon-mobil *, .modulex-ust-akordeon-mobil *::before, .modulex-ust-akordeon-mobil *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-ust-akordeon-mobil :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-ust-akordeon-mobil :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-ust-akordeon-mobil :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-ust-akordeon-mobil :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-ust-akordeon-mobil img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-ust-akordeon-mobil) img { height: auto; }
+  .modulex-ust-akordeon-mobil [hidden] { display: none !important; }
+  .modulex-ust-akordeon-mobil :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-ust-akordeon-mobil :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-ust-akordeon-mobil-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-ust-akordeon-mobil-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-ust-akordeon-mobil--bassiz .modulex-ust-akordeon-mobil-bas { display: none; }
+  .modulex-ust-akordeon-mobil-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-ust-akordeon-mobil-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-ust-akordeon-mobil-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-ust-akordeon-mobil-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-ust-akordeon-mobil-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-ust-akordeon-mobil-dugme:hover { transform: translateY(-2px); }
+  .modulex-ust-akordeon-mobil-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-ust-akordeon-mobil-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-ust-akordeon-mobil-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-ust-akordeon-mobil { position: relative; z-index: 900; }
+  .modulex-ust-akordeon-mobil-logo { display: inline-flex; flex: 0 1 auto; min-width: 0; align-items: center; color: inherit; text-decoration: none; }
+  /* dar ekranda geniş logo/uzun ad çubuğu taşırmasın: logo daralır (img max-width 100%), ad sarar */
+  .modulex-ust-akordeon-mobil-logo img { width: auto; max-height: --logoH--; }
+  .modulex-ust-akordeon-mobil-ad { font-family: var(--mx-font-heading, inherit); font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .modulex-ust-akordeon-mobil-oge { position: relative; display: inline-flex; align-items: center; min-height: 44px; color: inherit; font-weight: 600; text-decoration: none; transition: color 0.2s ease, background 0.2s ease; }
+  .modulex-ust-akordeon-mobil-oge:hover, .modulex-ust-akordeon-mobil-oge[aria-current="page"] { color: --accentInk--; }
+  .modulex-ust-akordeon-mobil-cta { display: inline-flex; flex: none; align-items: center; gap: 6px; min-height: 44px; padding: 8px 18px; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .modulex-ust-akordeon-mobil-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -12px --accent--; }
+  .modulex-ust-akordeon-mobil-cta .material-symbols-outlined, .modulex-ust-akordeon-mobil-tel .material-symbols-outlined, .modulex-ust-akordeon-mobil-posta .material-symbols-outlined { font-size: 18px; }
+  .modulex-ust-akordeon-mobil-tel, .modulex-ust-akordeon-mobil-posta { display: inline-flex; align-items: center; gap: 6px; color: inherit; text-decoration: none; white-space: nowrap; }
+  .modulex-ust-akordeon-mobil-tel:hover, .modulex-ust-akordeon-mobil-posta:hover { color: --accentInk--; }
+  .modulex-ust-akordeon-mobil-dil:empty { display: none; }
+  .modulex-ust-akordeon-mobil-ac { display: none; align-items: center; gap: 10px; min-width: 46px; min-height: 46px; padding: 0 12px; border: 1px solid --cizgi--; border-radius: 999px; background: transparent; color: inherit; font: inherit; font-weight: 700; }
+  .modulex-ust-akordeon-mobil-ac-ikon { display: grid; gap: 4px; width: 20px; }
+  .modulex-ust-akordeon-mobil-ac-ikon span { display: block; height: 2px; border-radius: 2px; background: currentColor; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .modulex-ust-akordeon-mobil--acik .modulex-ust-akordeon-mobil-ac-ikon span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .modulex-ust-akordeon-mobil--acik .modulex-ust-akordeon-mobil-ac-ikon span:nth-child(2) { opacity: 0; }
+  .modulex-ust-akordeon-mobil--acik .modulex-ust-akordeon-mobil-ac-ikon span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .modulex-ust-akordeon-mobil-kapat { display: inline-grid; place-items: center; width: 46px; height: 46px; border: 1px solid --cizgi--; border-radius: 50%; background: transparent; color: inherit; }
+  .modulex-ust-akordeon-mobil-perde { position: fixed; inset: 0; z-index: 1; background: color-mix(in srgb, --text-- 45%, transparent); animation: modulex-ust-akordeon-mobil-sol 0.3s ease both; }
+  @keyframes modulex-ust-akordeon-mobil-sol { from { opacity: 0; } to { opacity: 1; } }
+
+  .modulex-ust-akordeon-mobil-panel { display: grid; gap: 14px; }
+  @media (max-width: 1024px) {
+    .modulex-ust-akordeon-mobil--js .modulex-ust-akordeon-mobil-nav, .modulex-ust-akordeon-mobil--js .modulex-ust-akordeon-mobil-genis { display: none; }
+    .modulex-ust-akordeon-mobil--js .modulex-ust-akordeon-mobil-ac { display: inline-flex; }
+    .modulex-ust-akordeon-mobil-panel { position: absolute; inset-inline: 0; inset-block-start: 100%; padding: 16px 20px 24px; border-block-end: 1px solid --cizgi--; background: --bg--; box-shadow: 0 24px 40px -28px color-mix(in srgb, --text-- 55%, transparent); animation: modulex-ust-akordeon-mobil-in 0.3s ease both; }
+    .modulex-ust-akordeon-mobil-pliste { display: grid; }
+    .modulex-ust-akordeon-mobil-pliste .modulex-ust-akordeon-mobil-oge { width: 100%; min-height: 50px; border-block-end: 1px solid --cizgi--; font-size: 1.05rem; }
+    .modulex-ust-akordeon-mobil-palt { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  }
+  @media (min-width: 1025px) {
+    .modulex-ust-akordeon-mobil-panel { display: none !important; }
+  }
+  @keyframes modulex-ust-akordeon-mobil-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
+  .modulex-ust-akordeon-mobil-cubuk { display: flex; align-items: center; justify-content: space-between; gap: 14px 28px; padding-block: 14px; }
+  .modulex-ust-akordeon-mobil-yatay { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; }
+  .modulex-ust-akordeon-mobil-kat { position: relative; }
+  .modulex-ust-akordeon-mobil-kbas { display: flex; align-items: center; gap: 2px; }
+  .modulex-ust-akordeon-mobil-koge { display: inline-flex; align-items: center; min-height: 44px; color: inherit; font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .modulex-ust-akordeon-mobil-koge:hover, .modulex-ust-akordeon-mobil-koge[aria-current="page"], .modulex-ust-akordeon-mobil-kat--aktif > .modulex-ust-akordeon-mobil-kbas > .modulex-ust-akordeon-mobil-koge { color: --accentInk--; }
+  .modulex-ust-akordeon-mobil-kac { display: inline-grid; flex: none; place-items: center; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background-color: transparent; color: inherit; transition: background-color 0.2s ease; }
+  .modulex-ust-akordeon-mobil-kac:hover { background-color: color-mix(in srgb, --text-- 8%, transparent); }
+  .modulex-ust-akordeon-mobil-arti { position: relative; display: block; width: 12px; height: 12px; transition: transform 0.3s ease; }
+  .modulex-ust-akordeon-mobil-arti::before, .modulex-ust-akordeon-mobil-arti::after { content: ""; position: absolute; inset-inline: 0; inset-block-start: 5px; height: 2px; border-radius: 2px; background-color: currentColor; transition: transform 0.3s ease; }
+  .modulex-ust-akordeon-mobil-arti::after { transform: rotate(90deg); }
+  .modulex-ust-akordeon-mobil-kat--acik > .modulex-ust-akordeon-mobil-kbas .modulex-ust-akordeon-mobil-arti { transform: rotate(180deg); }
+  .modulex-ust-akordeon-mobil-kat--acik > .modulex-ust-akordeon-mobil-kbas .modulex-ust-akordeon-mobil-arti::after { transform: rotate(0deg); }
+  .modulex-ust-akordeon-mobil-kalt { display: grid; grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 0.35s ease, visibility 0.35s; }
+  .modulex-ust-akordeon-mobil-kaltl { display: grid; min-height: 0; overflow: hidden; }
+  .modulex-ust-akordeon-mobil-kat--acik > .modulex-ust-akordeon-mobil-kalt { grid-template-rows: 1fr; visibility: visible; }
+  .modulex-ust-akordeon-mobil-kaoge { display: flex; align-items: center; min-height: 40px; padding-inline: 14px; color: inherit; text-decoration: none; transition: color 0.2s ease; }
+  .modulex-ust-akordeon-mobil-kaoge:hover, .modulex-ust-akordeon-mobil-kaoge[aria-current="page"] { color: --accentInk--; }
+  .modulex-ust-akordeon-mobil-yatay .modulex-ust-akordeon-mobil-kalt { position: absolute; inset-block-start: 100%; inset-inline-start: -14px; z-index: 5; min-width: 230px; border-radius: 14px; background-color: --bg--; color: --text--; box-shadow: 0 20px 40px -24px color-mix(in srgb, --text-- 60%, transparent), inset 0 0 0 1px --cizgi--; }
+  .modulex-ust-akordeon-mobil-yatay .modulex-ust-akordeon-mobil-kat:hover > .modulex-ust-akordeon-mobil-kalt, .modulex-ust-akordeon-mobil-yatay .modulex-ust-akordeon-mobil-kat:focus-within > .modulex-ust-akordeon-mobil-kalt { grid-template-rows: 1fr; visibility: visible; }
+  .modulex-ust-akordeon-mobil-yatay .modulex-ust-akordeon-mobil-kaltl > li:first-child { padding-block-start: 8px; }
+  .modulex-ust-akordeon-mobil-yatay .modulex-ust-akordeon-mobil-kaltl > li:last-child { padding-block-end: 8px; }
+  .modulex-ust-akordeon-mobil-akordeon { display: grid; }
+  .modulex-ust-akordeon-mobil-akordeon > .modulex-ust-akordeon-mobil-kat { border-block-end: 1px solid --cizgi--; }
+  .modulex-ust-akordeon-mobil-akordeon .modulex-ust-akordeon-mobil-kbas { justify-content: space-between; }
+  .modulex-ust-akordeon-mobil-akordeon .modulex-ust-akordeon-mobil-koge { flex: 1; min-height: 54px; font-size: 1.1rem; }
+  .modulex-ust-akordeon-mobil-akordeon .modulex-ust-akordeon-mobil-kac { width: 44px; height: 44px; border: 1px solid --cizgi--; }
+  .modulex-ust-akordeon-mobil-akordeon .modulex-ust-akordeon-mobil-kaltl { border-inline-start: 2px solid --accent--; }
+  .modulex-ust-akordeon-mobil-akordeon .modulex-ust-akordeon-mobil-kaltl > li:last-child { padding-block-end: 10px; }
+  .modulex-ust-akordeon-mobil:not(.modulex-ust-akordeon-mobil--ak) .modulex-ust-akordeon-mobil-akordeon .modulex-ust-akordeon-mobil-kalt { grid-template-rows: 1fr; visibility: visible; }
+  .modulex-ust-akordeon-mobil-cubuk > .modulex-ust-akordeon-mobil-son { display: flex; align-items: center; gap: 12px; }
+  .modulex-ust-akordeon-mobil-genis { display: flex; align-items: center; gap: 12px; }
+  @media (max-width: 1024px) {
+    .modulex-ust-akordeon-mobil:not(.modulex-ust-akordeon-mobil--js) .modulex-ust-akordeon-mobil-cubuk { flex-wrap: wrap; }
+    .modulex-ust-akordeon-mobil:not(.modulex-ust-akordeon-mobil--js) .modulex-ust-akordeon-mobil-yatay .modulex-ust-akordeon-mobil-kalt { position: static; grid-template-rows: 1fr; visibility: visible; box-shadow: none; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ust-akordeon-mobil :is(.modulex-ust-akordeon-mobil-baslik, .modulex-ust-akordeon-mobil-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ust-akordeon-mobil-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-ust-akordeon-mobil { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-ust-akordeon-mobil *, .modulex-ust-akordeon-mobil *::before, .modulex-ust-akordeon-mobil *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-ust-akordeon-mobil";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const cekmece = (s, P) => {
+          const ac = s.querySelector("." + P + "-ac");
+          const panel = ac ? document.getElementById(ac.getAttribute("aria-controls")) : null;
+          if (!ac || !panel) return;
+          s.classList.add(P + "--js");
+          const perde = s.querySelector("." + P + "-perde");
+          const modal = panel.getAttribute("aria-modal") === "true";
+          const kok = document.documentElement;
+          const kapa = (odak) => {
+            if (panel.hidden) return;
+            panel.hidden = true;
+            if (perde) perde.hidden = true;
+            ac.setAttribute("aria-expanded", "false");
+            s.classList.remove(P + "--acik");
+            if (modal) kok.style.overflow = "";
+            if (odak) ac.focus();
+          };
+          const aci = () => {
+            panel.hidden = false;
+            if (perde) perde.hidden = false;
+            ac.setAttribute("aria-expanded", "true");
+            s.classList.add(P + "--acik");
+            if (modal) kok.style.overflow = "hidden";
+            const ilk = panel.querySelector("a[href], button");
+            if (ilk) ilk.focus();
+          };
+          ac.addEventListener("click", () => (panel.hidden ? aci() : kapa(true)));
+          panel.addEventListener("click", (e) => {
+            if (e.target.closest("." + P + "-kapat")) kapa(true);
+            else if (e.target.closest("a[href]")) kapa(false);
+          });
+          if (perde) perde.addEventListener("click", () => kapa(true));
+          document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) kapa(true); });
+          if (modal) {
+            panel.addEventListener("keydown", (e) => {
+              if (e.key !== "Tab") return;
+              const o = [...panel.querySelectorAll("a[href], button:not([disabled])")].filter((x) => x.offsetParent !== null);
+              if (!o.length) return;
+              if (e.shiftKey && document.activeElement === o[0]) { e.preventDefault(); o[o.length - 1].focus(); }
+              else if (!e.shiftKey && document.activeElement === o[o.length - 1]) { e.preventDefault(); o[0].focus(); }
+            });
+          }
+          const g = Number(ac.dataset.genis);
+          if (g && window.matchMedia) window.matchMedia(`(min-width: ${g}px)`).addEventListener("change", (m) => { if (m.matches) kapa(false); });
+        };
+    const akordeon = (s, P) => {
+        const dugmeler = [...s.querySelectorAll("." + P + "-kac")];
+        s.classList.add(P + "--ak");
+        if (!dugmeler.length) return;
+        const li = (x) => x.closest("." + P + "-kat");
+        const kapa = (x, odak) => {
+          if (x.getAttribute("aria-expanded") !== "true") return;
+          x.setAttribute("aria-expanded", "false");
+          li(x).classList.remove(P + "-kat--acik");
+          if (odak) x.focus();
+        };
+        dugmeler.forEach((x) => {
+          x.addEventListener("click", () => {
+            const acik = x.getAttribute("aria-expanded") === "true";
+            const kap = x.closest("ul");
+            dugmeler.forEach((y) => { if (y !== x && y.closest("ul") === kap) kapa(y, false); });
+            if (acik) kapa(x, false);
+            else { x.setAttribute("aria-expanded", "true"); li(x).classList.add(P + "-kat--acik"); }
+          });
+        });
+        s.addEventListener("keydown", (e) => {
+          if (e.key !== "Escape") return;
+          const x = dugmeler.find((y) => y.getAttribute("aria-expanded") === "true" && li(y).contains(document.activeElement));
+          if (x) kapa(x, true);
+        });
+        document.addEventListener("click", (e) => { dugmeler.forEach((x) => { if (!li(x).contains(e.target)) kapa(x, false); }); });
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      cekmece(s, P, az);
+      akordeon(s, P, az);
+    });
+  })();
+</script>

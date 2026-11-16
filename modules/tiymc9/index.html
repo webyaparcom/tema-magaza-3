@@ -1,0 +1,80 @@
+<section class="modulex-referans-raf{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-referans-raf-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* referans-raf — referans-hucre-cizgi ve referans-sayi-duvar düz logo kutularıdır; bu modül nesne/raf iskeleti kurar — satır boyu birleşen raf tahtası, üç paket biçimi (kapak + gövde), rafın altına asılı fiyat etiketi; raftan kaldırma etkileşimi ailede yok. */
+  .modulex-referans-raf { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-referans-raf *, .modulex-referans-raf *::before, .modulex-referans-raf *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-referans-raf :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-referans-raf :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-referans-raf :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-referans-raf :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-referans-raf img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-referans-raf) img { height: auto; }
+  .modulex-referans-raf [hidden] { display: none !important; }
+  .modulex-referans-raf :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-referans-raf :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-referans-raf-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-referans-raf-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-referans-raf--bassiz .modulex-referans-raf-bas { display: none; }
+  .modulex-referans-raf-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-referans-raf-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-referans-raf-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-referans-raf-bas { max-width: 760px; }
+  .modulex-referans-raf-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-referans-raf-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-referans-raf-dugme:hover { transform: translateY(-2px); }
+  .modulex-referans-raf-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-referans-raf-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-referans-raf-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-referans-raf-raflar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 58px 0; padding-inline: 14px; padding-block-end: 34px; }
+  .modulex-referans-raf-urun { position: relative; display: grid; align-items: end; padding-inline: 14px; padding-block-end: 16px; }
+  .modulex-referans-raf-urun::after { content: ""; position: absolute; inset-inline: -14px; inset-block-end: 0; height: 16px; background: linear-gradient(color-mix(in srgb, --accent-- 30%, --kartBg--), color-mix(in srgb, --accent-- 50%, --text--)); box-shadow: 0 14px 16px -12px color-mix(in srgb, --text-- 60%, transparent); }
+  .modulex-referans-raf-urun > *, .modulex-referans-raf-urun > .modulex-referans-raf-bag { display: grid; justify-items: center; }
+  .modulex-referans-raf-paket { position: relative; display: grid; justify-items: center; width: min(100%, 150px); transform-origin: 50% 100%; transition: transform 0.35s ease; }
+  .modulex-referans-raf-urun:hover .modulex-referans-raf-paket, .modulex-referans-raf-urun:focus-within .modulex-referans-raf-paket { transform: translateY(-12px) rotate(-3deg); }
+  .modulex-referans-raf-kapak { width: 100%; height: 14px; border-radius: 4px 4px 0 0; background: --accent--; }
+  .modulex-referans-raf-govde { display: grid; justify-items: center; align-content: center; gap: 8px; width: 100%; min-height: 150px; padding: 16px 10px; border: 2px solid color-mix(in srgb, --accent-- 40%, --cizgi--); border-block-start-width: 0; background: --kartBg--; text-align: center; }
+  .modulex-referans-raf-urun--kavanoz .modulex-referans-raf-kapak { width: 74%; height: 18px; border-radius: 8px 8px 2px 2px; }
+  .modulex-referans-raf-urun--kavanoz .modulex-referans-raf-govde { min-height: 132px; border-block-start-width: 2px; border-radius: 28px 28px 14px 14px; }
+  .modulex-referans-raf-urun--sise .modulex-referans-raf-kapak { width: 32%; height: 34px; border-radius: 6px 6px 0 0; }
+  .modulex-referans-raf-urun--sise .modulex-referans-raf-govde { min-height: 176px; border-block-start-width: 2px; border-radius: 42px 42px 12px 12px; }
+  .modulex-referans-raf-pharf { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: --vurguBg--; color: --vurguText--; font-weight: 850; }
+  .modulex-referans-raf-pimg { width: auto; max-width: 92%; height: 34px; object-fit: contain; }
+  .modulex-referans-raf-pad { font-size: 0.95rem; font-weight: 800; line-height: 1.25; }
+  .modulex-referans-raf-cizgikod { width: 58%; height: 16px; background: repeating-linear-gradient(90deg, color-mix(in srgb, --text-- 75%, transparent) 0 2px, transparent 2px 4px, color-mix(in srgb, --text-- 75%, transparent) 4px 5px, transparent 5px 8px); }
+  .modulex-referans-raf-etk { position: absolute; inset-inline: 0; inset-block-start: 100%; width: max-content; max-width: 90%; margin-inline: auto; margin-block-start: 6px; padding: 2px 10px; border: 1px solid --cizgi--; border-radius: 4px; background: --bg--; color: --text--; font-size: 0.74rem; font-weight: 700; transform-origin: 50% 0; transition: transform 0.35s ease; }
+  .modulex-referans-raf-urun:hover .modulex-referans-raf-etk { transform: rotate(5deg); }
+  @media (max-width: 1024px) { .modulex-referans-raf-raflar { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 768px) {
+    .modulex-referans-raf-raflar { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 54px; padding-inline: 10px; }
+    .modulex-referans-raf-urun { padding-inline: 10px; }
+    .modulex-referans-raf-urun::after { inset-inline: -10px; }
+    .modulex-referans-raf-govde { min-height: 128px; }
+    .modulex-referans-raf-urun--sise .modulex-referans-raf-govde { min-height: 150px; }
+  }
+  .modulex-referans-raf-logo { display: block; width: auto; max-width: 100%; height: clamp(32px, 4vw, 48px); object-fit: contain; filter: grayscale(1); transition: filter 0.3s ease, transform 0.3s ease; }
+  .modulex-referans-raf-kelime { display: inline-block; color: --text--; font-family: var(--mx-font-heading, inherit); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; transition: color 0.3s ease; }
+  .modulex-referans-raf-bag { color: inherit; text-decoration: none; }
+  .modulex-referans-raf-sektor { color: --accentInk--; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .modulex-referans-raf-kmetin { color: --muted--; font-size: 0.95rem; line-height: 1.65; }
+  .modulex-referans-raf-yil { color: --muted--; font-size: 0.85rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .modulex-referans-raf-harf img { width: 100%; height: 100%; object-fit: contain; }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-referans-raf :is(.modulex-referans-raf-baslik, .modulex-referans-raf-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-referans-raf-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-referans-raf { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-referans-raf *, .modulex-referans-raf *::before, .modulex-referans-raf *::after { animation: none !important; transition: none !important; }
+  }
+</style>

@@ -1,0 +1,52 @@
+{
+  "name": "Üst Akordeon Mobil — alt sayfalar artı düğmeli akordeonda",
+  "description": "Masaüstünde logo, menü ve düğme; alt sayfası olan öğenin yanında artı düğmesi, açılır kutu yükseklik geçişiyle iner. Dar ekranda açılan listede her bölüm büyük satır; artıya dokununca bölüm akordeon gibi açılır (aynı anda tek bölüm), artı eksiye döner. JS yoksa alt sayfalar açık listelenir. Alt sayfalar mobilde de saklanmaz ama kalabalık etmez: girintili sabit liste yerine tek açık bölümlü akordeon (artı/eksi), masaüstünde yükseklikle açılan kutu. Sayfalar site sayfalarından, dil seçici {{langbar}}, logo {{logo}}. Mobil menü erişilebilir (aria-expanded, Esc, odak). Renkler desing + var(--mx-site-*); mantıksal CSS → RTL.",
+  "version": "1.0.0",
+  "icon": "unfold_more",
+  "category": "menu",
+  "subCategory": "accordion-nav",
+  "tags": [
+    "menu",
+    "accordion",
+    "subpages",
+    "plus-minus",
+    "mobile",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "0px",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "cta_ad": "",
+    "cta_url": "",
+    "tel": "",
+    "logoimg": "",
+    "bg": "var(--mx-site-bg, #ffffff)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 68%, var(--mx-site-bg, #ffffff))",
+    "kartBg": "var(--mx-site-surface, #f6f7f9)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "logoH": "44px",
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "name": "ek bağlantı adı (dil sözlüğü)",
+      "url": "iç yol ya da dış adres (dış adres yeni sekmede)"
+    }
+  }
+}

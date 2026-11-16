@@ -1,0 +1,139 @@
+{
+  "data": [
+    {
+      "id": "fk1n7he8ih",
+      "name": {
+        "tr": "Reyonlar",
+        "en": "Departments",
+        "ar": "الأقسام"
+      },
+      "description": {
+        "tr": "Şubelerden hikâyeler ve raflardaki markalar (kurgusal).",
+        "en": "Stories from the branches and the brands on our shelves (fictional).",
+        "ar": "قصص من الفروع والعلامات على رفوفنا (افتراضية)."
+      },
+      "path": "hizmetler",
+      "icon": "storefront",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "yk58o2",
+          "tiymc9"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "name": {
+        "tr": "Kurumsal",
+        "en": "About",
+        "ar": "عنّا"
+      },
+      "status": "play",
+      "id": "hakkimizda",
+      "path": "hakkimizda",
+      "category": "",
+      "url": "",
+      "index": 1,
+      "icon": "info",
+      "desing": {
+        "header": [],
+        "body": [
+          "emgm3s",
+          "mtr4on"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Bir kavşaktan üç şubeye Kavşak’ın hikâyesi ve rakamları.",
+        "en": "The Kavsak story and figures, from one crossroads to three branches.",
+        "ar": "قصة كافشاك وأرقامها من تقاطع واحد إلى ثلاثة فروع."
+      }
+    },
+    {
+      "id": "85bgbils2w",
+      "name": {
+        "tr": "Ekip",
+        "en": "Team",
+        "ar": "الفريق"
+      },
+      "description": {
+        "tr": "Şube ve reyona göre aranabilir ekip (kurgusal).",
+        "en": "A team you can search by branch and department (fictional).",
+        "ar": "فريق يمكن البحث فيه حسب الفرع والقسم (افتراضي)."
+      },
+      "path": "ekip",
+      "icon": "groups",
+      "category": "hakkimizda",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "3hb158"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "id": "h5rx404qny",
+      "name": {
+        "tr": "Şubeler",
+        "en": "Branches",
+        "ar": "الفروع"
+      },
+      "description": {
+        "tr": "Üç şubenin adresi, saatleri, yol tarifi ve ekibi.",
+        "en": "Addresses, hours, directions and team for all three branches.",
+        "ar": "عناوين الفروع الثلاثة وساعاتها واتجاهاتها وفريقها."
+      },
+      "path": "teklif-al",
+      "icon": "location_on",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "537t66",
+          "k8mp01",
+          "3hb158"
+        ],
+        "footer": []
+      },
+      "index": 3
+    },
+    {
+      "name": {
+        "tr": "Yol tarifi",
+        "en": "Directions",
+        "ar": "الاتجاهات"
+      },
+      "status": "play",
+      "id": "iletisim",
+      "path": "iletisim",
+      "category": "h5rx404qny",
+      "url": "",
+      "index": 4,
+      "icon": "directions",
+      "desing": {
+        "header": [],
+        "body": [
+          "k8mp01",
+          "537t66"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Harita ve merkez şubeye yol tarifi.",
+        "en": "Map and directions to the main branch.",
+        "ar": "الخريطة والاتجاهات إلى الفرع الرئيسي."
+      }
+    }
+  ],
+  "desc": []
+}

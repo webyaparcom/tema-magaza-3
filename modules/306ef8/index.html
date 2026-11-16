@@ -1,0 +1,106 @@
+<footer class="modulex-alt-plan-kat{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-alt-plan-kat-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</footer>
+
+<style>
+  /* alt-plan-kat — Footer bir mimari çizim: odalar paylaşılan tek duvarlarla birbirine dayanır (iç duvar yalnız bitiş kenarlarında, dış çerçeve taşanı kırpar), satırlar flex ile dolar — saat ya da bağlantı yoksa boş oda kalmaz; hover odanın zeminini boyar, kapı yayı vurgu rengine döner. */
+  .modulex-alt-plan-kat { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-alt-plan-kat *, .modulex-alt-plan-kat *::before, .modulex-alt-plan-kat *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-alt-plan-kat :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-alt-plan-kat :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-alt-plan-kat :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-alt-plan-kat :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-alt-plan-kat img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-alt-plan-kat) img { height: auto; }
+  .modulex-alt-plan-kat [hidden] { display: none !important; }
+  .modulex-alt-plan-kat :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-alt-plan-kat :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-alt-plan-kat-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-alt-plan-kat-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-alt-plan-kat--bassiz .modulex-alt-plan-kat-bas { display: none; }
+  .modulex-alt-plan-kat-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-alt-plan-kat-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-alt-plan-kat-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-alt-plan-kat-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-alt-plan-kat-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-alt-plan-kat-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-plan-kat-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-alt-plan-kat-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-alt-plan-kat-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-alt-plan-kat-bag { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+  .modulex-alt-plan-kat-bag:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-alt-plan-kat-bag[aria-current="page"] { color: --accentInk--; font-weight: 700; }
+  .modulex-alt-plan-kat-logo { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+  .modulex-alt-plan-kat-logo img { width: auto; max-height: --logoH--; }
+  .modulex-alt-plan-kat-ad { font-family: var(--mx-font-heading, inherit); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .modulex-alt-plan-kat-bbaslik { margin-block-end: 14px; color: --accentInk--; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .modulex-alt-plan-kat-sayfalar, .modulex-alt-plan-kat-baglantilar, .modulex-alt-plan-kat-iletisim, .modulex-alt-plan-kat-yasal { display: grid; gap: 9px; }
+  .modulex-alt-plan-kat-il { display: flex; align-items: flex-start; gap: 10px; }
+  .modulex-alt-plan-kat-il-ic { display: grid; gap: 2px; }
+  .modulex-alt-plan-kat-il-etiket { color: --muted--; font-size: 0.8rem; }
+  .modulex-alt-plan-kat-il-ikon { flex: none; color: --accentInk--; font-size: 20px; }
+  .modulex-alt-plan-kat-saatler { display: grid; gap: 6px; }
+  .modulex-alt-plan-kat-saat { display: flex; justify-content: space-between; gap: 16px; }
+  .modulex-alt-plan-kat-saat dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .modulex-alt-plan-kat-sosyal { display: flex; flex-wrap: wrap; gap: 10px; }
+  .modulex-alt-plan-kat-sosyal-a { display: inline-grid; place-items: center; width: 42px; height: 42px; border: 1px solid --cizgi--; border-radius: 50%; color: inherit; font-size: 18px; transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .modulex-alt-plan-kat-sosyal-a:hover { border-color: --accent--; background: --accent--; color: --accentText--; transform: translateY(-2px); }
+  .modulex-alt-plan-kat-hakkinda { max-width: 46ch; color: --muted--; }
+  .modulex-alt-plan-kat-telif { display: flex; flex-wrap: wrap; gap: 4px 14px; color: --muted--; font-size: 0.9rem; }
+  .modulex-alt-plan-kat-dil:empty { display: none; }
+  .modulex-alt-plan-kat-yukari { display: inline-grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 50%; background: --accent--; color: --accentText--; text-decoration: none; transition: transform 0.25s ease; }
+  .modulex-alt-plan-kat-yukari:hover { transform: translateY(-3px); }
+  .modulex-alt-plan-kat-bulten { display: grid; gap: 8px; }
+  .modulex-alt-plan-kat-nl-etiket { font-size: 0.9rem; font-weight: 700; }
+  .modulex-alt-plan-kat-nl-satir { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-alt-plan-kat-nl-girdi { flex: 1 1 200px; min-width: 0; min-height: 48px; padding: 10px 18px; border: 1px solid --cizgi--; border-radius: 999px; background: --bg--; color: --text--; font: inherit; }
+  .modulex-alt-plan-kat-nl-dugme { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 10px 22px; border: 0; border-radius: 999px; background: --accent--; color: --accentText--; font: inherit; font-weight: 700; transition: transform 0.2s ease; }
+  .modulex-alt-plan-kat-nl-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-plan-kat-nl-dugme .material-symbols-outlined { font-size: 18px; }
+  .modulex-alt-plan-kat-nl-durum:empty { display: none; }
+  .modulex-alt-plan-kat-nl-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+  .modulex-alt-plan-kat-nl-metin { color: --muted--; }
+
+  .modulex-alt-plan-kat-pk-olcu { display: flex; align-items: center; gap: 14px; margin-block-end: 16px; color: --muted--; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-alt-plan-kat-pk-olcu::before, .modulex-alt-plan-kat-pk-olcu::after { content: ""; flex: 1; height: 10px; border-block-end: 1px solid --muted--; border-inline: 1px solid --muted--; transition: border-color 0.3s ease; }
+  .modulex-alt-plan-kat-pk-olcu span { max-width: 60%; text-align: center; }
+  .modulex-alt-plan-kat-pk-plan { display: flex; flex-wrap: wrap; overflow: hidden; border: 6px solid --text--; border-radius: 2px; background: --bg--; }
+  .modulex-alt-plan-kat-pk-oda .modulex-alt-plan-kat-saatler { width: min(100%, 380px); }
+  .modulex-alt-plan-kat-pk-oda { position: relative; display: grid; align-content: start; gap: 12px; flex: 1 1 220px; min-width: 0; margin-block-end: -3px; margin-inline-end: -3px; padding: 26px 26px 66px; border-block-end: 3px solid --text--; border-inline-end: 3px solid --text--; transition: background-color 0.35s ease; }
+  .modulex-alt-plan-kat-pk-oda--salon { flex: 2 1 380px; background-image: repeating-linear-gradient(135deg, color-mix(in srgb, --text-- 5%, transparent) 0 1px, transparent 1px 14px); }
+  .modulex-alt-plan-kat-pk-oda--genis { flex: 1.6 1 300px; }
+  .modulex-alt-plan-kat-pk-oda:hover { background-color: color-mix(in srgb, --accent-- 7%, --bg--); }
+  .modulex-alt-plan-kat-pk-no { position: absolute; inset-block-start: 12px; inset-inline-end: 12px; display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid --text--; border-radius: 50%; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.7rem; font-weight: 700; }
+  .modulex-alt-plan-kat-pk-ad { padding-inline-end: 38px; color: --accentInk--; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+  .modulex-alt-plan-kat-pk-kapi { position: absolute; inset-block-end: -3px; inset-inline-start: 22px; width: 44px; height: 44px; border-block-start: 1.5px dashed --muted--; border-inline-end: 1.5px dashed --muted--; border-inline-start: 3px solid --text--; border-block-end: 3px solid --bg--; border-start-end-radius: 100%; pointer-events: none; transition: border-color 0.35s ease; }
+  .modulex-alt-plan-kat-pk-oda:hover .modulex-alt-plan-kat-pk-kapi { border-block-start-color: --accent--; border-inline-end-color: --accent--; border-block-end-color: color-mix(in srgb, --accent-- 7%, --bg--); }
+  .modulex-alt-plan-kat-pk-antet { display: flex; flex-wrap: wrap; align-items: stretch; border: 2px solid --text--; border-block-start: 0; font-size: 0.9rem; }
+  .modulex-alt-plan-kat-pk-antet > * { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding: 12px 18px; border-inline-end: 1px solid --cizgi--; }
+  .modulex-alt-plan-kat-pk-antet .modulex-alt-plan-kat-telif { flex: 1 1 260px; }
+  .modulex-alt-plan-kat-pk-yukari { display: inline-flex; align-items: center; justify-content: center; min-width: 58px; margin-inline-start: auto; border-inline-end: 0; color: inherit; text-decoration: none; transition: background-color 0.3s ease, color 0.3s ease; }
+  .modulex-alt-plan-kat-pk-yukari:hover { background-color: --text--; color: --bg--; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-plan-kat :is(.modulex-alt-plan-kat-pk-olcu, .modulex-alt-plan-kat-pk-ad) { font-family: inherit; letter-spacing: 0; }
+  @media (max-width: 768px) {
+    .modulex-alt-plan-kat-pk-plan { border-width: 4px; }
+    .modulex-alt-plan-kat-pk-oda, .modulex-alt-plan-kat-pk-oda--salon, .modulex-alt-plan-kat-pk-oda--genis { flex-basis: 100%; padding: 22px 18px 60px; }
+    .modulex-alt-plan-kat-pk-antet > * { flex: 1 1 100%; border-inline-end: 0; border-block-end: 1px solid --cizgi--; }
+    .modulex-alt-plan-kat-pk-antet > :last-child { border-block-end: 0; }
+    .modulex-alt-plan-kat-pk-yukari { min-height: 48px; margin-inline-start: 0; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-plan-kat :is(.modulex-alt-plan-kat-baslik, .modulex-alt-plan-kat-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-plan-kat-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-alt-plan-kat { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-alt-plan-kat *, .modulex-alt-plan-kat *::before, .modulex-alt-plan-kat *::after { animation: none !important; transition: none !important; }
+  }
+</style>
