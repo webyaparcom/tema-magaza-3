@@ -3,17 +3,23 @@
   "name": {
     "tr": "Reyonlar",
     "en": "Departments",
-    "ar": "الأقسام"
+    "ar": "الأقسام",
+    "de": "Gänge",
+    "ru": "Отделы"
   },
   "description": {
     "tr": "Şubelerden hikâyeler ve raflardaki markalar (kurgusal).",
     "en": "Stories from the branches and the brands on our shelves (fictional).",
-    "ar": "قصص من الفروع والعلامات على رفوفنا (افتراضية)."
+    "ar": "قصص من الفروع والعلامات على رفوفنا (افتراضية).",
+    "de": "Geschichten aus den Filialen und die Marken in den Regalen (fiktiv).",
+    "ru": "Истории из филиалов и бренды на полках (вымышленно)."
   },
   "keyword": {
     "tr": "reyon, marka",
     "en": "department, brand",
-    "ar": "قسم، علامة"
+    "ar": "قسم، علامة",
+    "de": "Abteilung, Marke",
+    "ru": "отдел, марка"
   },
   "path": "hizmetler",
   "icon": "storefront",
@@ -33,7 +39,9 @@
   "title": {
     "tr": "Reyonlar",
     "en": "Departments",
-    "ar": "الأقسام"
+    "ar": "الأقسام",
+    "de": "Gänge",
+    "ru": "Отделы"
   },
   "date": "2026-11-16T20:26:09.607Z",
   "update": "2026-11-16T20:30:58.216Z"

@@ -3,17 +3,23 @@
   "name": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "description": {
     "tr": "Vizyonumuz",
     "en": "Our vision",
-    "ar": "رؤيتنا"
+    "ar": "رؤيتنا",
+    "de": "Unsere Vision",
+    "ru": "Наше видение"
   },
   "keyword": {
     "tr": "Vizyon",
     "en": "vision, our vision, goals",
-    "ar": "الرؤية, رؤيتنا, الأهداف"
+    "ar": "الرؤية, رؤيتنا, الأهداف",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "path": "vizyon",
   "icon": "visibility",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Vizyonumuz</h2>\n<p>Şehrin her yakasında on beş dakikada ulaşılan teknoloji mağazası olmak.</p>",
     "en": "<h2>Our vision</h2>\n<p>To be the electronics store you can reach in fifteen minutes from any side of the city.</p>",
-    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون متجر الإلكترونيات الذي تصله في خمس عشرة دقيقة من أي جهة في المدينة.</p>"
+    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون متجر الإلكترونيات الذي تصله في خمس عشرة دقيقة من أي جهة في المدينة.</p>",
+    "de": "<h2>Unsere Vision</h2>\n<p>Der Elektronikladen zu sein, den man von jeder Seite der Stadt in fünfzehn Minuten erreicht.</p>",
+    "ru": "<h2>Наше видение</h2>\n<p>Стать магазином электроники, до которого можно добраться с любой стороны города за пятнадцать минут.</p>"
   },
   "title": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "date": "2026-11-16T20:26:09.405Z",
   "update": "2026-11-16T20:30:58.247Z",

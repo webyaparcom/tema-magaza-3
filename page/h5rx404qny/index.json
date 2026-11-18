@@ -3,17 +3,23 @@
   "name": {
     "tr": "Şubeler",
     "en": "Branches",
-    "ar": "الفروع"
+    "ar": "الفروع",
+    "de": "Filialen",
+    "ru": "Филиалы"
   },
   "description": {
     "tr": "Üç şubenin adresi, saatleri, yol tarifi ve ekibi.",
     "en": "Addresses, hours, directions and team for all three branches.",
-    "ar": "عناوين الفروع الثلاثة وساعاتها واتجاهاتها وفريقها."
+    "ar": "عناوين الفروع الثلاثة وساعاتها واتجاهاتها وفريقها.",
+    "de": "Adresse, Zeiten, Anfahrt und Team der drei Filialen.",
+    "ru": "Адрес, часы работы, маршрут и команда трёх филиалов."
   },
   "keyword": {
     "tr": "şube, yol tarifi, Gaziantep",
     "en": "branch, directions, Gaziantep",
-    "ar": "فرع، اتجاهات، غازي عنتاب"
+    "ar": "فرع، اتجاهات، غازي عنتاب",
+    "de": "Filiale, Wegbeschreibung, Gaziantep",
+    "ru": "филиал, как добраться, Газиантеп"
   },
   "path": "teklif-al",
   "icon": "location_on",
@@ -34,7 +40,9 @@
   "title": {
     "tr": "Şubeler",
     "en": "Branches",
-    "ar": "الفروع"
+    "ar": "الفروع",
+    "de": "Filialen",
+    "ru": "Филиалы"
   },
   "date": "2026-11-16T20:26:09.634Z",
   "update": "2026-11-16T20:30:58.233Z"

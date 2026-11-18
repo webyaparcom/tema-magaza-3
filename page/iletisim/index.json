@@ -2,7 +2,9 @@
   "name": {
     "tr": "Yol tarifi",
     "en": "Directions",
-    "ar": "الاتجاهات"
+    "ar": "الاتجاهات",
+    "de": "Anfahrt",
+    "ru": "Проезд"
   },
   "status": "play",
   "category": "h5rx404qny",
@@ -23,7 +25,9 @@
   "description": {
     "tr": "Harita ve merkez şubeye yol tarifi.",
     "en": "Map and directions to the main branch.",
-    "ar": "الخريطة والاتجاهات إلى الفرع الرئيسي."
+    "ar": "الخريطة والاتجاهات إلى الفرع الرئيسي.",
+    "de": "Karte und Anfahrt zur Hauptniederlassung.",
+    "ru": "Карта и маршрут до головного офиса."
   },
   "spot": {
     "tr": "",
@@ -34,12 +38,16 @@
   "title": {
     "tr": "Yol tarifi",
     "en": "Directions",
-    "ar": "الاتجاهات"
+    "ar": "الاتجاهات",
+    "de": "Anfahrt",
+    "ru": "Проезд"
   },
   "keyword": {
     "tr": "iletişim",
     "en": "contact",
-    "ar": "اتصال"
+    "ar": "اتصال",
+    "de": "Kontakt",
+    "ru": "контакты"
   },
   "text": {},
   "update": "2026-11-16T20:30:58.238Z",
