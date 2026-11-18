@@ -5,12 +5,16 @@
       "name": {
         "tr": "Reyonlar",
         "en": "Departments",
-        "ar": "الأقسام"
+        "ar": "الأقسام",
+        "de": "Gänge",
+        "ru": "Отделы"
       },
       "description": {
         "tr": "Şubelerden hikâyeler ve raflardaki markalar (kurgusal).",
         "en": "Stories from the branches and the brands on our shelves (fictional).",
-        "ar": "قصص من الفروع والعلامات على رفوفنا (افتراضية)."
+        "ar": "قصص من الفروع والعلامات على رفوفنا (افتراضية).",
+        "de": "Geschichten aus den Filialen und die Marken in den Regalen (fiktiv).",
+        "ru": "Истории из филиалов и бренды на полках (вымышленно)."
       },
       "path": "hizmetler",
       "icon": "storefront",
@@ -30,7 +34,9 @@
       "name": {
         "tr": "Kurumsal",
         "en": "About",
-        "ar": "عنّا"
+        "ar": "عنّا",
+        "de": "Über uns",
+        "ru": "О нас"
       },
       "status": "play",
       "id": "hakkimizda",
@@ -51,7 +57,9 @@
       "description": {
         "tr": "Bir kavşaktan üç şubeye Kavşak’ın hikâyesi ve rakamları.",
         "en": "The Kavsak story and figures, from one crossroads to three branches.",
-        "ar": "قصة كافشاك وأرقامها من تقاطع واحد إلى ثلاثة فروع."
+        "ar": "قصة كافشاك وأرقامها من تقاطع واحد إلى ثلاثة فروع.",
+        "de": "Die Geschichte und Zahlen von Kavşak, von einem Kreuzungspunkt zu drei Filialen.",
+        "ru": "История и цифры Kavşak: от одного перекрестка к трем филиалам."
       }
     },
     {
@@ -59,12 +67,16 @@
       "name": {
         "tr": "Ekip",
         "en": "Team",
-        "ar": "الفريق"
+        "ar": "الفريق",
+        "de": "Team",
+        "ru": "Команда"
       },
       "description": {
         "tr": "Şube ve reyona göre aranabilir ekip (kurgusal).",
         "en": "A team you can search by branch and department (fictional).",
-        "ar": "فريق يمكن البحث فيه حسب الفرع والقسم (افتراضي)."
+        "ar": "فريق يمكن البحث فيه حسب الفرع والقسم (افتراضي).",
+        "de": "Team, das nach Filiale und Abteilung durchsucht werden kann (fiktiv).",
+        "ru": "Команда, которую можно найти по филиалу и отделу (вымышленная)."
       },
       "path": "ekip",
       "icon": "groups",
@@ -84,12 +96,16 @@
       "name": {
         "tr": "Şubeler",
         "en": "Branches",
-        "ar": "الفروع"
+        "ar": "الفروع",
+        "de": "Filialen",
+        "ru": "Филиалы"
       },
       "description": {
         "tr": "Üç şubenin adresi, saatleri, yol tarifi ve ekibi.",
         "en": "Addresses, hours, directions and team for all three branches.",
-        "ar": "عناوين الفروع الثلاثة وساعاتها واتجاهاتها وفريقها."
+        "ar": "عناوين الفروع الثلاثة وساعاتها واتجاهاتها وفريقها.",
+        "de": "Adresse, Zeiten, Anfahrt und Team der drei Filialen.",
+        "ru": "Адрес, часы работы, маршрут и команда трёх филиалов."
       },
       "path": "teklif-al",
       "icon": "location_on",
@@ -110,7 +126,9 @@
       "name": {
         "tr": "Yol tarifi",
         "en": "Directions",
-        "ar": "الاتجاهات"
+        "ar": "الاتجاهات",
+        "de": "Anfahrt",
+        "ru": "Проезд"
       },
       "status": "play",
       "id": "iletisim",
@@ -131,7 +149,9 @@
       "description": {
         "tr": "Harita ve merkez şubeye yol tarifi.",
         "en": "Map and directions to the main branch.",
-        "ar": "الخريطة والاتجاهات إلى الفرع الرئيسي."
+        "ar": "الخريطة والاتجاهات إلى الفرع الرئيسي.",
+        "de": "Karte und Anfahrt zur Hauptniederlassung.",
+        "ru": "Карта и маршрут до головного офиса."
       }
     }
   ],

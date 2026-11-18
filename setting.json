@@ -4,12 +4,16 @@
   "description": {
     "tr": "Kavşak Teknoloji: Gaziantep’te üç şubeli teknoloji mağazası; dizüstü, ses, giyilebilir ve aksesuar. Size en yakın şubeyi bulun, yol tarifi alın, stok sorun. Demo site; içerik kurgusaldır.",
     "en": "Kavsak Teknoloji: an electronics store with three branches in Gaziantep: laptops, audio, wearables and accessories. Find the nearest branch, get directions, ask about stock. Demo site; content is fictional.",
-    "ar": "كافشاك تكنولوجي: متجر إلكترونيات بثلاثة فروع في غازي عنتاب؛ حواسيب محمولة وصوتيات وأجهزة قابلة للارتداء وإكسسوارات. اعثر على أقرب فرع واحصل على الاتجاهات واسأل عن المخزون. موقع تجريبي؛ المحتوى افتراضي."
+    "ar": "كافشاك تكنولوجي: متجر إلكترونيات بثلاثة فروع في غازي عنتاب؛ حواسيب محمولة وصوتيات وأجهزة قابلة للارتداء وإكسسوارات. اعثر على أقرب فرع واحصل على الاتجاهات واسأل عن المخزون. موقع تجريبي؛ المحتوى افتراضي.",
+    "de": "Kavşak Teknoloji: ein Technikgeschäft mit drei Filialen in Gaziantep; Laptops, Audio, Wearables und Zubehör. Finden Sie die nächste Filiale, lassen Sie sich den Weg zeigen, fragen Sie nach dem Bestand. Demo-Website; der Inhalt ist fiktiv.",
+    "ru": "Kavşak Teknoloji: магазин техники с тремя филиалами в Газиантепе; ноутбуки, аудио, носимые устройства и аксессуары. Найдите ближайший филиал, получите маршрут, узнайте о наличии. Демо-сайт; содержание вымышленное."
   },
   "keyword": {
     "tr": "teknoloji mağazası, şube, yol tarifi, dizüstü, kulaklık, Gaziantep",
     "en": "electronics store, branch, directions, laptop, headphones, Gaziantep",
-    "ar": "متجر إلكترونيات، فرع، اتجاهات، حاسوب محمول، سماعات، غازي عنتاب"
+    "ar": "متجر إلكترونيات، فرع، اتجاهات، حاسوب محمول، سماعات، غازي عنتاب",
+    "de": "Elektronikgeschäft, Filiale, Anfahrt, Laptop, Kopfhörer, Gaziantep",
+    "ru": "электронный магазин, филиал, как добраться, ноутбук, наушники, Газиантеп"
   },
   "category": "Kurumsal",
   "name": "Kavşak Teknoloji",
@@ -18,15 +22,27 @@
     "tr": true,
     "en": true,
     "ar": true,
-    "de": false,
-    "ru": false,
+    "de": true,
+    "ru": true,
     "es": false,
     "fr": false,
     "it": false,
     "ja": false,
     "zh": false,
     "ko": false,
-    "pt": false
+    "pt": false,
+    "fa": false,
+    "he": false,
+    "ur": false,
+    "nl": false,
+    "pl": false,
+    "uk": false,
+    "az": false,
+    "ka": false,
+    "el": false,
+    "bg": false,
+    "ro": false,
+    "hi": false
   },
   "logo": "logo.png",
   "multi": false,
